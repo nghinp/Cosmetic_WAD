@@ -1,78 +1,77 @@
+<?php
+include "../includes/database.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="admin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/images/SetUpSprint.svg" type="image/icon type">
-    <title>SetUpSprint</title>
+    <link rel="icon" href="../assets/images/GlowUpBeauty.svg" type="image/icon type">
+    <title>Admin Orders - GlowUpBeauty</title>
 </head>
 <body>
     <nav>
         <div>
-          
-          <img src="../assets/images/SetUpSprint.svg" class="logo"></img>
+            <img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/>
         </div>
         <div style="flex-basis: auto;">
-          <form class="search-form">
-            
-            <input  type="text" class="search-input" placeholder="Search...">
-            <button type="submit" class="submit-btn">Submit</button>
-          </form>
+            <form class="search-form">
+                <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
+            </form>
         </div>
-      </nav>
-      
-      <div class="mpage">
-        <div class="lfttable" >
+    </nav>
+
+    <div class="mpage">
+        <div class="lfttable">
             <div class="tablrow">
-                <div class="tablecol"> <img src="../assets/images/dashboard.png" >      </div>
-                <div class="tablecol"> <a href="./adminDashboard.php"> Dashboard </a>   </div>
+                <div class="tablecol"><img src="../assets/images/dashboard.png"></div>
+                <div class="tablecol"><a href="adminDashboard.php">Dashboard</a></div>
             </div>
-          <div class="tablrow">
-            <div class="tablecol"> <img src="../assets/images/costumers.png" >      </div>
-            <div class="tablecol"> <a href="admindashbord.html">Costumers   </a>   </div>
-          </div>
-          <div class="tablrow">
-            <div class="tablecol"> <img src="../assets/images/orders.png" >      </div>
-            <div class="tablecol"><a href="./adminOrders.php"> Orders  </a>    </div>
-          </div>
-          <div class="tablrow">
-            <div class="tablecol"> <img src="../assets/images/products.png" >      </div>
-            <div class="tablecol"> <a href="productDetailPage.php">Products   </a>   </div>
-          </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/costumers.png"></div>
+                <div class="tablecol"><a href="adminCustomers.php">Customers</a></div>
+            </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/orders.png"></div>
+                <div class="tablecol"><a href="adminOrders.php">Orders</a></div>
+            </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/products.png"></div>
+                <div class="tablecol"><a href="adminProducts.php">Products</a></div>
+            </div>
         </div>
 
         <div class="rgtcontent2">
-            <div class ="ttbl4">
-
+            <div class="ttbl4">
                 <h3>Latest Orders</h3>
                 <table class="tbl4">
                     <tr>
-                        <th>Order </th>
+                        <th>Client</th>
                         <th>Order ID</th>
-                        <th>Date&Time</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>STATUs</th>
+                        <th>Date & Time</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
                     </tr>
-                    <tr>
-                        <td>Payment from Bonnie Green</td>
-                        <td>1005</td>
-                        <td>feb 13,2024</td>
-                        <td>$1700</td>
-                        <td>1</td>
-                        <td >
-                          <div class="stat">
-                            delivred
-                          </div>
-                        </td>
-                    </tr>
-                    
-                    
-                    
+                    <?php
+                    $stmt = $connect->query("SELECT O.OrderID, O.OrderDate, O.TotalAmount, O.OrderStatus, C.FirstName, C.LastName
+                                             FROM Orders O
+                                             JOIN Clients C ON O.ClientID = C.ClientID
+                                             ORDER BY O.OrderDate DESC");
+
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['FirstName']) . " " . htmlspecialchars($row['LastName']) . "</td>";
+                        echo "<td>" . $row['OrderID'] . "</td>";
+                        echo "<td>" . $row['OrderDate'] . "</td>";
+                        echo "<td>" . $row['TotalAmount'] . " DT</td>";
+                        echo "<td><div class='stat'>" . htmlspecialchars($row['OrderStatus']) . "</div></td>";
+                        echo "</tr>";
+                    }
+                    ?>
                 </table>
             </div>
-                
         </div>
     </div>
 </body>

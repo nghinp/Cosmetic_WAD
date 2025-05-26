@@ -65,11 +65,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <nav>
-    <div><img src="../assets/images/SetUpSprint.svg" class="logo" /></div>
+    <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/></div>
     <div style="flex-basis: auto;">
         <form class="search-form">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button type="submit" class="submit-btn">Submit</button>
+            <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
         </form>
     </div>
     
@@ -78,21 +77,21 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="mpage">
     <div class="lfttable">
         <div class="tablrow">
-            <div class="tablecol"><img src="../assets/images/dashboard.png"></div>
-            <div class="tablecol"><a href="adminDashboard.php">Dashboard</a></div>
-        </div>
-        <div class="tablrow">
-            <div class="tablecol"><img src="../assets/images/costumers.png"></div>
-            <div class="tablecol"><a href="adminCostumers.php">Customers</a></div>
-        </div>
-        <div class="tablrow">
-            <div class="tablecol"><img src="../assets/images/orders.png"></div>
-            <div class="tablecol"><a href="adminOrders.php">Orders</a></div>
-        </div>
-        <div class="tablrow">
-            <div class="tablecol"><img src="../assets/images/products.png"></div>
-            <div class="tablecol"><a href="adminProducts.php">Products</a></div>
-        </div>
+                <div class="tablecol"><img src="../assets/images/dashboard.png"></div>
+                <div class="tablecol"><a href="adminDashboard.php">Dashboard</a></div>
+            </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/costumers.png"></div>
+                <div class="tablecol"><a href="adminCustomers.php">Customers</a></div>
+            </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/orders.png"></div>
+                <div class="tablecol"><a href="adminOrders.php">Orders</a></div>
+            </div>
+            <div class="tablrow">
+                <div class="tablecol"><img src="../assets/images/products.png"></div>
+                <div class="tablecol"><a href="adminProducts.php">Products</a></div>
+            </div>
     </div>
 
     <div class="rgtcontent2">
@@ -112,6 +111,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Status</th>
                     <th>Date Added</th>
                     <th>Rating</th>
+                    <th>Actions</th>
                 </tr>
                 <?php foreach ($products as $product): ?>
                 <tr>
@@ -133,6 +133,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $product['Status'] ?></td>
                     <td><?= $product['DateAdded'] ?></td>
                     <td><?= $product['Rating'] ?></td>
+                    <td>
+                        <a href="editProduct.php?id=<?= $product['ProductID'] ?>">Edit</a> |
+                        <a href="deleteProduct.php?id=<?= $product['ProductID'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
             </table>
