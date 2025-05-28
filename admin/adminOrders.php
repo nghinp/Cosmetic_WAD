@@ -4,6 +4,7 @@ include "../includes/database.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="admin.css">
     <meta charset="UTF-8">
@@ -11,15 +12,12 @@ include "../includes/database.php";
     <link rel="icon" href="../assets/images/GlowUpBeauty.svg" type="image/icon type">
     <title>Admin Orders - GlowUpBeauty</title>
 </head>
+
 <body>
     <nav>
-        <div>
-            <img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/>
-        </div>
-        <div style="flex-basis: auto;">
-            <form class="search-form">
-                <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
-            </form>
+        <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px" /></div>
+        <div class="logout-container">
+            <a href="?action=logout" class="logout-btn">Logout</a>
         </div>
     </nav>
 
@@ -75,4 +73,5 @@ include "../includes/database.php";
         </div>
     </div>
 </body>
+
 </html>

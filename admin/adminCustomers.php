@@ -17,21 +17,19 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="admin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customers - </title>
 </head>
+
 <body>
     <nav>
-        <div>
-            <img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/>
-        </div>
-        <div style="flex-basis: auto;">
-            <form class="search-form">
-                <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
-            </form>
+        <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px" /></div>
+        <div class="logout-container">
+            <a href="?action=logout" class="logout-btn">Logout</a>
         </div>
     </nav>
 
@@ -69,22 +67,23 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>Actions</th>
                     </tr>
                     <?php foreach ($clients as $client): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($client['ClientID']) ?></td>
-                        <td><?= htmlspecialchars($client['FirstName']) ?></td>
-                        <td><?= htmlspecialchars($client['LastName']) ?></td>
-                        <td><?= htmlspecialchars($client['Email']) ?></td>
-                        <td><?= htmlspecialchars($client['PhoneNumber']) ?></td>
-                        <td><?= htmlspecialchars($client['Address']) ?></td>
-                        <td>
-                            <a href="deleteClient.php?id=<?= $client['ClientID'] ?>" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
-                        </td>
+                        <tr>
+                            <td><?= htmlspecialchars($client['ClientID']) ?></td>
+                            <td><?= htmlspecialchars($client['FirstName']) ?></td>
+                            <td><?= htmlspecialchars($client['LastName']) ?></td>
+                            <td><?= htmlspecialchars($client['Email']) ?></td>
+                            <td><?= htmlspecialchars($client['PhoneNumber']) ?></td>
+                            <td><?= htmlspecialchars($client['Address']) ?></td>
+                            <td>
+                                <a href="deleteClient.php?id=<?= $client['ClientID'] ?>" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
+                            </td>
 
-                    </tr>
+                        </tr>
                     <?php endforeach; ?>
                 </table>
             </div>
         </div>
     </div>
 </body>
+
 </html>

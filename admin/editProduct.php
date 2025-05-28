@@ -51,20 +51,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<!-- HTML form -->
-<h2>Edit Product</h2>
-<form method="POST" enctype="multipart/form-data">
-    <label>Name:</label><input type="text" name="name" value="<?= $product['ProductName'] ?>"><br>
-    <label>Description:</label><input type="text" name="description" value="<?= $product['Description'] ?>"><br>
-    <label>Category:</label><input type="text" name="category" value="<?= $product['Category'] ?>"><br>
-    <label>Brand:</label><input type="text" name="brand" value="<?= $product['Brand'] ?>"><br>
-    <label>Supplier:</label><input type="text" name="supplier" value="<?= $product['SupplierID'] ?>"><br>
-    <label>Old Price:</label><input type="number" step="0.01" name="old_price" value="<?= $product['OldPrice'] ?>"><br>
-    <label>Special Price:</label><input type="number" step="0.01" name="special_price" value="<?= $product['SpecialPrice'] ?>"><br>
-    <label>Stock:</label><input type="number" name="quantity" value="<?= $product['QuantityInStock'] ?>"><br>
-    <label>Discount:</label><input type="number" step="0.01" name="discount" value="<?= $product['Discount'] ?>"><br>
-    <label>Image:</label><input type="file" name="image"><br>
-    <label>Status:</label><input type="text" name="status" value="<?= $product['Status'] ?>"><br>
-    <label>Rating:</label><input type="number" step="0.01" name="rating" max="5" value="<?= $product['Rating'] ?>"><br><br>
-    <button type="submit">Update Product</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="edit-form-wrapper">
+        <h2>Edit Product</h2>
+        <form method="POST" enctype="multipart/form-data" class="edit-product-form">
+            <label>Name:</label><input type="text" name="name" value="<?= $product['ProductName'] ?>" required>
+            <label>Description:</label><input type="text" name="description" value="<?= $product['Description'] ?>">
+            <label>Category:</label><input type="text" name="category" value="<?= $product['Category'] ?>">
+            <label>Brand:</label><input type="text" name="brand" value="<?= $product['Brand'] ?>">
+            <label>Supplier:</label><input type="text" name="supplier" value="<?= $product['SupplierID'] ?>">
+            <label>Old Price:</label><input type="number" step="0.01" name="old_price" value="<?= $product['OldPrice'] ?>">
+            <label>Special Price:</label><input type="number" step="0.01" name="special_price" value="<?= $product['SpecialPrice'] ?>">
+            <label>Stock:</label><input type="number" name="quantity" value="<?= $product['QuantityInStock'] ?>">
+            <label>Discount:</label><input type="number" step="0.01" name="discount" value="<?= $product['Discount'] ?>">
+            <label>Image:</label><input type="file" name="image">
+            <label>Status:</label><input type="text" name="status" value="<?= $product['Status'] ?>">
+            <label>Rating:</label><input type="number" step="0.01" name="rating" max="5" value="<?= $product['Rating'] ?>">
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

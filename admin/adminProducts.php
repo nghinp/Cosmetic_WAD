@@ -39,8 +39,6 @@ if (isset($_POST['add_product'])) {
         $filename = basename($_FILES["image"]["name"]);
         $target_file = $target_dir . time() . "_" . $filename; // unique name
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-
-        // Save relative path to DB
         $imagePath = substr($target_file, 3); // remove "../"
     }
 
@@ -66,32 +64,29 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <nav>
     <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/></div>
-    <div style="flex-basis: auto;">
-        <form class="search-form">
-            <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
-        </form>
+    <div class="logout-container">
+        <a href="?action=logout" class="logout-btn">Logout</a>
     </div>
-    
 </nav>
 
 <div class="mpage">
     <div class="lfttable">
         <div class="tablrow">
-                <div class="tablecol"><img src="../assets/images/dashboard.png"></div>
-                <div class="tablecol"><a href="adminDashboard.php">Dashboard</a></div>
-            </div>
-            <div class="tablrow">
-                <div class="tablecol"><img src="../assets/images/costumers.png"></div>
-                <div class="tablecol"><a href="adminCustomers.php">Customers</a></div>
-            </div>
-            <div class="tablrow">
-                <div class="tablecol"><img src="../assets/images/orders.png"></div>
-                <div class="tablecol"><a href="adminOrders.php">Orders</a></div>
-            </div>
-            <div class="tablrow">
-                <div class="tablecol"><img src="../assets/images/products.png"></div>
-                <div class="tablecol"><a href="adminProducts.php">Products</a></div>
-            </div>
+            <div class="tablecol"><img src="../assets/images/dashboard.png"></div>
+            <div class="tablecol"><a href="adminDashboard.php">Dashboard</a></div>
+        </div>
+        <div class="tablrow">
+            <div class="tablecol"><img src="../assets/images/costumers.png"></div>
+            <div class="tablecol"><a href="adminCustomers.php">Customers</a></div>
+        </div>
+        <div class="tablrow">
+            <div class="tablecol"><img src="../assets/images/orders.png"></div>
+            <div class="tablecol"><a href="adminOrders.php">Orders</a></div>
+        </div>
+        <div class="tablrow">
+            <div class="tablecol"><img src="../assets/images/products.png"></div>
+            <div class="tablecol"><a href="adminProducts.php">Products</a></div>
+        </div>
     </div>
 
     <div class="rgtcontent2">
@@ -144,19 +139,21 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="tbl3">
             <h3>Add New Product</h3>
-            <form method="POST" action="" enctype="multipart/form-data">
-                <label>Product Name:</label><input type="text" name="name" required><br>
-                <label>Description:</label><input type="text" name="description"><br>
-                <label>Category:</label><input type="text" name="category"><br>
-                <label>Brand:</label><input type="text" name="brand"><br>
-                <label>Supplier ID:</label><input type="text" name="supplier"><br>
-                <label>Old Price:</label><input type="number" step="0.01" name="old_price" required><br>
-                <label>Special Price:</label><input type="number" step="0.01" name="special_price"><br>
-                <label>Quantity in Stock:</label><input type="number" name="quantity" required><br>
-                <label>Discount (%):</label><input type="number" step="0.01" name="discount"><br>
-                <label>Upload Image:</label><input type="file" name="image"><br>
-                <label>Status:</label><input type="text" name="status" value="Available"><br>
-                <label>Rating:</label><input type="number" step="0.01" name="rating" max="5"><br><br>
+            <form method="POST" action="" enctype="multipart/form-data" class="add-product-form">
+                <div class="form-group">
+                    <label>Product Name:</label><input type="text" name="name" required>
+                    <label>Description:</label><input type="text" name="description">
+                    <label>Category:</label><input type="text" name="category">
+                    <label>Brand:</label><input type="text" name="brand">
+                    <label>Supplier ID:</label><input type="text" name="supplier">
+                    <label>Old Price:</label><input type="number" step="0.01" name="old_price" required>
+                    <label>Special Price:</label><input type="number" step="0.01" name="special_price">
+                    <label>Quantity in Stock:</label><input type="number" name="quantity" required>
+                    <label>Discount (%):</label><input type="number" step="0.01" name="discount">
+                    <label>Upload Image:</label><input type="file" name="image">
+                    <label>Status:</label><input type="text" name="status" value="Available">
+                    <label>Rating:</label><input type="number" step="0.01" name="rating" max="5">
+                </div>
                 <button type="submit" name="add_product" class="submit-btn">Add Product</button>
             </form>
         </div>

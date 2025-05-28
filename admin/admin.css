@@ -213,3 +213,90 @@ th {
   padding: 200px;
   text-align: center;
 }
+
+.logout-container {
+  margin-left: auto;
+}
+
+.logout-btn {
+  background-color: #caceca;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #676161;
+}
+
+.add-product-form .form-group {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.add-product-form label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.add-product-form input[type="text"],
+.add-product-form input[type="number"],
+.add-product-form input[type="file"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Edit Product Page Styles */
+.edit-form-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: rgba(1, 1, 10, 0.2) 0px 10px 20px 0px;
+}
+
+.edit-form-wrapper h2 {
+  margin-bottom: 20px;
+  color: #2b3674;
+}
+
+.edit-product-form {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px 20px;
+}
+
+.edit-product-form label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.edit-product-form input[type="text"],
+.edit-product-form input[type="number"],
+.edit-product-form input[type="file"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-product-form button {
+  grid-column: 2;
+  padding: 10px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.edit-product-form button:hover {
+  background-color: #45a049;
+}

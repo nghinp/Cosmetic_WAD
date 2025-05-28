@@ -28,15 +28,11 @@ $topBrands = $brandStmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <nav>
-        <div>
-            <img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/>
-        </div>
-        <div style="flex-basis: auto;">
-            <form class="search-form">
-                <div class='logout-btn'><a href="../config/logout.php">Logout</a></div>
-            </form>
-        </div>
-    </nav>
+    <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/></div>
+    <div class="logout-container">
+        <a href="?action=logout" class="logout-btn">Logout</a>
+    </div>
+</nav>
 
     <div class="mpage">
         <div class="lfttable">
