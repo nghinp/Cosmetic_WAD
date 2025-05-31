@@ -8,13 +8,6 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     exit();
 }
 
-// Handle logout
-if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-    session_destroy();
-    header("Location: ../config/login.php");
-    exit();
-}
-
 // Handle form submission to add new product
 if (isset($_POST['add_product'])) {
     $name = $_POST['name'];
@@ -65,7 +58,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <nav>
     <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px"/></div>
     <div class="logout-container">
-        <a href="?action=logout" class="logout-btn">Logout</a>
+        <a href="../config/logout.php" class="logout-btn">Logout</a>
     </div>
 </nav>
 

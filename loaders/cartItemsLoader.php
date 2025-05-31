@@ -29,7 +29,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
         <!-- displaying product items in cart -->
         <div class="cart-item">
         <div class="left-cart-item">
-            <div><img src="../assets/uploads/<?php echo $product['ImageURL']; ?>" width="100px" height="100px" /></div>
+<img src="../<?php echo $product['ImageURL']; ?>" width="100px" height="100px" />
             <div class="cart-item-info">
                 <h2><?php echo $product['ProductName']?></h2>
                 <h2><?php echo ($product['SpecialPrice']!=0)?$product['SpecialPrice']:  $product['OldPrice']?> DT</h2>

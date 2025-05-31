@@ -2,8 +2,8 @@
 <footer>
     <div class="footer-container">
         <div class="footer-item">
-            <p>Elevate your PC setup with precision.<br> Discover top-tier components tailored<br> to your needs.Build your dream<br> rig with SetupSprint.</p>
-            <div class="socials"><a href="#"><img src="../assets/images/Social.svg" alt="socials"/></a></div>
+            <p>Elevate your beauty routine with precision.<br> Discover premium cosmetics tailored<br> to your skin tone and style. Create your dream<br> look with GlowUpBeauty.</p>
+            <div class="socials"><a href="https://github.com/nghinp/Cosmetic_WAD.git"><img src="../assets/images/Social.svg" alt="socials" /></a></div>
         </div>
         <div class="footer-item">
             <p class="title">Company</p>
@@ -35,9 +35,9 @@
     </div>
     <hr style="width: 90%;">
     <div class="flex-items">
-        <p class="copyrights" >Shop.co © 2000-2024, All Rights Reserved</p>
+        <p class="copyrights">Shop.co © 2025, All Rights Reserved</p>
         <div class="flex">
-            <img src="../assets/images/visa.svg" alt="visa"/>
-        </div> 
+            <img src="../assets/images/visa.svg" alt="visa" />
+        </div>
     </div>
 </footer>

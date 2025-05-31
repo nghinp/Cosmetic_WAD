@@ -17,7 +17,7 @@ include "../includes/database.php";
     <nav>
         <div><img src="../assets/images/GlowUpBeauty.svg" class="logo" height="40px" /></div>
         <div class="logout-container">
-            <a href="?action=logout" class="logout-btn">Logout</a>
+            <a href="../config/logout.php" class="logout-btn">Logout</a>
         </div>
     </nav>
 

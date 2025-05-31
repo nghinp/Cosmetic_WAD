@@ -72,8 +72,12 @@
     <!-- Shop Products -->
     <div class="shop-right">
         <div class="shop-products-list">
-            <div>
-                <h2 class="medium-title">Shop</h2>
+            <div class="search">
+                <!-- Search bar -->
+                <form method="GET" action="shopPage.php" class="search-form" style="margin-bottom: 20px;">
+                    <input type="text" name="search" placeholder="Search products..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" />
+                    <button type="submit">Search</button>
+                </form>
             </div>
             <ul>
                 <?php include "../loaders/shopProductLoader.php"; ?>
@@ -114,7 +118,6 @@
                 ?>
             </div>
 
-            <!-- Next button -->
             <?php
             $nextPage = ($page < $total_pages) ? $page + 1 : $total_pages;
             $queryString['page'] = $nextPage;
