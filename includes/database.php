@@ -2,8 +2,8 @@
 
 $host = 'localhost' ;
 $dbname = 'setupsprint_ecommerce_website';
-$username = 'root'; //add your username
-$password = 'nghi112'; //add your password
+$username = ''; //add your username
+$password = ''; //add your password
 
 try {
     $connect = new PDO(
