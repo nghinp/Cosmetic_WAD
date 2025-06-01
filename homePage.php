@@ -55,46 +55,6 @@
     </section>
     <!-- ---------------------------------------------------------------------------------------------- -->
 
-
-
-    <!-- Most selled Products section -->
-    <section class="container">
-        <div class="title">
-            <h1 class="title-text">MOST SELLED PRODUCTS</h1>
-        </div>
-        <div class="products-list">
-            <ul>
-                <?php
-                require_once "includes/database.php";
-
-                $quer = "SELECT * FROM product WHERE ProductID IN (4,18,80,150,76)";
-                $stm = $connect->query($quer);
-                $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                foreach ($result as $row) {
-                    $url = $row["ImageURL"]; ?>
-                    <!-- displaying product card -->
-                    <li><a href="pages/productDetailPage.php?ID=<?php echo "$row[ProductID]" ?>">
-                            <div class="product-item">
-                                <div><img src="<?php echo $url ?>" alt="product" class="prd-img" /></div>
-                                <p class="pr-name"><?php echo $row["ProductName"] ?></p>
-                                <img src="assets/images/rating.svg" alt="rating">
-                                <p class="pr-price"><?php echo $row["OldPrice"] ?> DT</p>
-                            </div>
-                        </a></li>
-
-                <?php } ?>
-
-
-            </ul>
-        </div>
-
-        <div class="btn-div">
-            <button class="btn"><a href="pages/shopPage.php">View All</a></button>
-
-        </div>
-    </section>
-    <!-- ------------------------------------------------------------------------------------------------------------ -->
     <!-- Feedbacks section -->
     <hr style="width: 90%;">
     <section class="container">

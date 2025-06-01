@@ -55,20 +55,20 @@
                     <hr>
                     <div class="sum">
                         <h5>Subtotal</h5>
-                        <h4><?php echo $_SESSION['total-bd']?> DT</h4>
+                        <h4><?php echo $_SESSION['total-bd']?> VND</h4>
                     </div>
                     <div class="sum">
                         <h5>-<?php echo($_SESSION['per']>100)?0:$_SESSION['per']?>%</h5>
-                        <div class="discount-price">-<?php echo $_SESSION['ds']?> DT</div>
+                        <div class="discount-price">-<?php echo $_SESSION['ds']?> VND</div>
                     </div>
                     <div class="sum">
                         <h5>Delivery Fee</h5>
-                        <h4 >7 DT</h4>
+                        <h4 >7 VND</h4>
                     </div>
                     <hr>
                     <div class="sum">
                         <h5>Total</h5>
-                        <h4><?php echo $_SESSION['total']?> DT</h4>
+                        <h4><?php echo $_SESSION['total']?> VND</h4>
                     </div>
                 </div>
             </div>   

@@ -41,11 +41,11 @@
                     <?php
                     if ($product['SpecialPrice']!=0){
                             echo "<div style='display:flex'>";
-                            echo"<div class='price-d'>".$product["SpecialPrice"]." DT</div>";
-                            echo "<div class='price-bd'>".$product['OldPrice']." DT</div>";
-                            echo"<div class='discount'><p>".$product['Discount']." DT</p></div>" ;
+                            echo"<div class='price-d'>".$product["SpecialPrice"]." VND</div>";
+                            echo "<div class='price-bd'>".$product['OldPrice']." VND</div>";
+                            echo"<div class='discount'><p>".$product['Discount']." VND</p></div>" ;
                             echo "</div>";
-                        } else echo "<div class='price-d'>".$product['OldPrice']." DT</div>";
+                        } else echo "<div class='price-d'>".$product['OldPrice']." VND</div>";
                     
                     ?>
                 </div>
