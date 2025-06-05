@@ -23,7 +23,7 @@ foreach ($orders as $order) {
             <tr>
                 <td><?php echo $product['ProductName']; ?></td>
                 <td><?php echo $product['Quantity']; ?></td>
-                <td><?php echo $product['Subtotal']; ?> DT</td>
+                <td><?php echo $product['Subtotal']; ?> VND</td>
                 <td><?php echo $order['OrderDate']; ?></td>
                 <td><?php echo $order['OrderStatus']; ?></td>
             </tr>
@@ -32,7 +32,7 @@ foreach ($orders as $order) {
         ?>
         <tr class="line">
     <td><strong>Total :</strong></td>
-    <td colspan="5S"><strong><?php echo $order['TotalAmount']; ?> DT</strong></td>
+    <td colspan="5S"><strong><?php echo $order['TotalAmount']; ?> VND</strong></td>
 </tr>
 
         <?php

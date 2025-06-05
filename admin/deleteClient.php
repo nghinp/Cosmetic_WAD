@@ -2,12 +2,6 @@
 session_start();
 include "../includes/database.php";
 
-// Only admin allowed
-if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header("Location: ../config/login.php");
-    exit();
-}
-
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Invalid client ID.");
 }

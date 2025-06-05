@@ -2,12 +2,6 @@
 session_start();
 include "../includes/database.php";
 
-// Block non-admins
-if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header("Location: ../config/login.php");
-    exit();
-}
-
 // Handle form submission to add new product
 if (isset($_POST['add_product'])) {
     $name = $_POST['name'];

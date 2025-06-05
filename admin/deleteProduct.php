@@ -2,12 +2,6 @@
 session_start();
 include "../includes/database.php";
 
-// Admin protection
-if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header("Location: ../config/login.php");
-    exit();
-}
-
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Invalid product ID.");
 }
@@ -23,7 +17,6 @@ try {
     $deleteProduct = $connect->prepare("DELETE FROM product WHERE ProductID = ?");
     $deleteProduct->execute([$id]);
 
-    // Redirect to admin panel
     header("Location: adminProducts.php");
     exit();
 

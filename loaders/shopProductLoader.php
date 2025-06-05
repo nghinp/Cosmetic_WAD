@@ -3,10 +3,10 @@ include_once "../includes/database.php";
 
 $prod_per_page = 16;
 $page = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
-$start_from = ($page - 1) * $prod_per_page;
+$start_from = ($page - 1) * $prod_per_page;  //only show product from that page
 
 $sql = "SELECT * FROM product WHERE 1=1";
-$params = [];
+$params = []; //empty box where store the filters (brand, category, search…)
 
 // Brand Filter
 if (!empty($_GET['brand'])) {
@@ -46,7 +46,7 @@ foreach ($result as $row) {
                 <div><img src="../<?php echo htmlspecialchars($row['ImageURL']); ?>" alt="product" style="width:100%; height:auto;"></div>
                 <p class="pr-name"><?php echo $row["ProductName"]; ?></p>
                 <img src="../assets/images/rating.svg" alt="rating">
-                <p class="pr-price"><?php echo $row["OldPrice"]; ?> DT</p>  
+                <p class="pr-price"><?php echo $row["OldPrice"]; ?> VND</p>  
             </div>
         </a>
     </li>

@@ -63,7 +63,7 @@ include "../includes/database.php";
                         echo "<td>" . htmlspecialchars($row['FirstName']) . " " . htmlspecialchars($row['LastName']) . "</td>";
                         echo "<td>" . $row['OrderID'] . "</td>";
                         echo "<td>" . $row['OrderDate'] . "</td>";
-                        echo "<td>" . $row['TotalAmount'] . " DT</td>";
+                        echo "<td>" . $row['TotalAmount'] . " VND</td>";
                         echo "<td><div class='stat'>" . htmlspecialchars($row['OrderStatus']) . "</div></td>";
                         echo "</tr>";
                     }

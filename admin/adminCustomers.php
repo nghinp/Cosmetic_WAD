@@ -2,12 +2,6 @@
 session_start();
 include "../includes/database.php";
 
-// Optional: Only allow admin access
-if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header("Location: ../config/login.php");
-    exit();
-}
-
 // Fetch all clients
 $query = "SELECT * FROM clients";
 $stmt = $connect->prepare($query);
@@ -22,7 +16,7 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="admin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers - </title>
+    <title>Customers </title>
 </head>
 
 <body>
